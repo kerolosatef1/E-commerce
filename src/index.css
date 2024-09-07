@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.active{
+    font-weight: 900;
+    color: #212529bf;
+  }.loader {
+    width: 48px;
+    height: 48px;
+    border: 2px solid #32f1f4;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+  .loader::after,
+  .loader::before {
+    content: '';  
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #FF3D00;
+    width: 6px;
+    height: 6px;
+    transform: translate(150%, 150%);
+    border-radius: 50%;
+  }
+  .loader::before {
+    left: auto;
+    top: auto;
+    right: 0;
+    bottom: 0;
+    transform: translate(-150%, -150%);
+  }
+  
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
+  .btn{
+    @apply px-4 py-2 w-full rounded-lg text-white bg-[#22db14]
+  }
+  .product .btn {
+    transition: transform 1s ,opacity 1s;
+    transform: translateY(600%);
+    opacity: 0;
+  }
+  .product:hover .btn{
+    opacity: 1;
+    transform:translateY(0%);
+  }
+
+  .row{
+    @apply flex flex-wrap  px-4 ;
+  }
+  .sticky-nav {
+    animation: sticky-nav 300ms;
+}
+
+    
+@keyframes sticky-nav {
+  0% {
+      transform: translateY(-6em)
+  }
+
+  100% {
+      transform: translateY(0)
+  }
+}
+.category-img{
+  height: 200px;
+}
+.slider{
+  scrollbar-width: none;
+}
+.slider-container {
+   /* أو قيمة محددة كـ 80vh حسب التصميم */
+  overflow-y: hidden;
+  scrollbar-width: none;
+
+}
+
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid;
+  border-color: #057a55 transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
